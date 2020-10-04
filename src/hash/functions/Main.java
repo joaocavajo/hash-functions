@@ -16,7 +16,7 @@ public class Main {
         var byteToString = new ByteService(logger);
         var appService = new HashService(byteToString, logger);
 
-        var firstHash = appService.getLastHash(fileName);
+        var firstHash = appService.getFirstBlockHash(fileName);
 
         logger.printHash(firstHash);
 

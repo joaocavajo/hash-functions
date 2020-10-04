@@ -23,7 +23,7 @@ public class HashService {
     }
 
 
-    public String getLastHash(String fileName) {
+    public String getFirstBlockHash(String fileName) {
         // Get file path
         var path = Paths.get(fileName);
 
@@ -33,6 +33,7 @@ public class HashService {
         // Split bytes with the minor chunk size and convert to hex
         var stack = getHexStack(fileBytes);
 
+        // Merge each block with the previous until be the first one, then return it
         return getHashByFileStack(stack);
     }
 
